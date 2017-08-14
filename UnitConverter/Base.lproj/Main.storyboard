@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in &lt;unit one&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1v-hQ-7vK">
+                                <rect key="frame" x="216" y="195" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WaU-yh-xZb">
+                                <rect key="frame" x="0.0" y="265" width="375" height="29"/>
+                                <segments>
+                                    <segment title="&lt;unit_two&gt;"/>
+                                    <segment title="&lt;unit_three&gt;"/>
+                                    <segment title="&lt;unit_four&gt;"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtA-7f-MkB">
+                                <rect key="frame" x="162" y="318" width="51" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gmj-tv-5bb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Update for the answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QD-vn-tgV">
+                                <rect key="frame" x="81" y="408" width="212" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bk9-IC-8Ad">
+                                <rect key="frame" x="0.0" y="190" width="206" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AtA-7f-MkB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0jm-xa-Vfl"/>
+                            <constraint firstItem="9QD-vn-tgV" firstAttribute="top" secondItem="AtA-7f-MkB" secondAttribute="bottom" constant="60" id="Cxs-e5-ViT"/>
+                            <constraint firstItem="AtA-7f-MkB" firstAttribute="top" secondItem="WaU-yh-xZb" secondAttribute="bottom" constant="25" id="Gbt-02-4kh"/>
+                            <constraint firstItem="WaU-yh-xZb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Srn-PD-4EZ"/>
+                            <constraint firstItem="bk9-IC-8Ad" firstAttribute="centerY" secondItem="L1v-hQ-7vK" secondAttribute="centerY" id="TmG-C0-gm9"/>
+                            <constraint firstItem="AtA-7f-MkB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xge-Rs-cpf"/>
+                            <constraint firstItem="9QD-vn-tgV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dgE-Lv-Kmq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L1v-hQ-7vK" secondAttribute="trailing" id="hF3-ss-pJl"/>
+                            <constraint firstItem="WaU-yh-xZb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jJb-yV-r57"/>
+                            <constraint firstItem="WaU-yh-xZb" firstAttribute="top" secondItem="L1v-hQ-7vK" secondAttribute="bottom" constant="49" id="mk0-Dt-9IH"/>
+                            <constraint firstItem="bk9-IC-8Ad" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qdK-Pa-C2C"/>
+                            <constraint firstItem="L1v-hQ-7vK" firstAttribute="leading" secondItem="bk9-IC-8Ad" secondAttribute="trailing" constant="10" id="xrN-Rd-jXj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputField" destination="bk9-IC-8Ad" id="bbP-GV-2AD"/>
+                        <outlet property="outputField" destination="9QD-vn-tgV" id="VbZ-fE-Y3L"/>
+                        <outlet property="segmentController" destination="WaU-yh-xZb" id="ZfQ-Y5-KqL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
