@@ -18,6 +18,11 @@ double convertCentimetreToFoot(double centimetreValue){
     return foot = 0.0328084 * centimetreValue;
 }
 
+double convertCentimetreToYard(double centimetreValue){
+    double yard;
+    return yard = 0.011 * centimetreValue;
+}
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
@@ -40,12 +45,12 @@ double convertCentimetreToFoot(double centimetreValue){
         [buffer appendString:[@(kmValue) stringValue]];
     }
     else if (self.segmentController.selectedSegmentIndex == 1){
-        [buffer appendString:@"foot"];
         double footValue = convertCentimetreToFoot(userInput);
         [buffer appendString:[@(footValue) stringValue]];
     }
     else{
-        [buffer appendString:@"unit four"];
+        double yardValue = convertCentimetreToYard(userInput);
+        [buffer appendString:[@(yardValue) stringValue]];
     }
     self.outputField.text = buffer;
 }
