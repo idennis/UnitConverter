@@ -8,10 +8,14 @@
 
 #import "ViewController.h"
 
-double convertUnitOneToUnitTwo(double unitOneValue){
-    double unitTwoValue;
-    return unitTwoValue = 10 * unitOneValue + 2;
-    
+double convertCentimetreToKilometre(double centimetreValue){
+    double kilometre;
+    return kilometre = 100000 * centimetreValue;
+}
+
+double convertCentimetreToFoot(double centimetreValue){
+    double foot;
+    return foot = 0.0328084 * centimetreValue;
 }
 
 @interface ViewController ()
@@ -30,14 +34,15 @@ double convertUnitOneToUnitTwo(double unitOneValue){
     
     double userInput = [self.inputField.text doubleValue];
     
-    [buffer appendString:@"clicked"];
 
     if (self.segmentController.selectedSegmentIndex == 0){
-        double unitTwoValue = convertUnitOneToUnitTwo(userInput);
-        [buffer appendString:[@(unitTwoValue) stringValue]];
+        double kmValue = convertCentimetreToKilometre(userInput);
+        [buffer appendString:[@(kmValue) stringValue]];
     }
     else if (self.segmentController.selectedSegmentIndex == 1){
-        [buffer appendString:@"unit three"];
+        [buffer appendString:@"foot"];
+        double footValue = convertCentimetreToFoot(userInput);
+        [buffer appendString:[@(footValue) stringValue]];
     }
     else{
         [buffer appendString:@"unit four"];
