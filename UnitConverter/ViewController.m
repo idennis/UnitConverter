@@ -10,7 +10,7 @@
 
 double convertCentimetreToKilometre(double centimetreValue){
     double kilometre;
-    return kilometre = 100000 * centimetreValue;
+    return kilometre = centimetreValue/100000;
 }
 
 double convertCentimetreToFoot(double centimetreValue){
@@ -46,11 +46,11 @@ double convertCentimetreToYard(double centimetreValue){
     }
     else if (self.segmentController.selectedSegmentIndex == 1){
         double footValue = convertCentimetreToFoot(userInput);
-        [buffer appendString:[@(footValue) stringValue]];
+        [buffer appendString:[NSString stringWithFormat:@"%.02f", footValue]];
     }
     else{
         double yardValue = convertCentimetreToYard(userInput);
-        [buffer appendString:[@(yardValue) stringValue]];
+        [buffer appendString:[NSString stringWithFormat:@"%.02f", yardValue]];
     }
     self.outputField.text = buffer;
 }
